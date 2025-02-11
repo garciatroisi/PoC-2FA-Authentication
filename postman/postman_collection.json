@@ -1,0 +1,67 @@
+{
+  "info": {
+    "name": "2FA Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Generate QR Code",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/auth/generate/:userId",
+          "host": ["{{base_url}}"],
+          "path": ["auth", "generate", ":userId"],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "12345",
+              "description": "User ID for generating QR code"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verify Token",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/auth/verify/:userId?token={{token}}",
+          "host": ["{{base_url}}"],
+          "path": ["auth", "verify", ":userId"],
+          "query": [
+            {
+              "key": "token",
+              "value": "123456",
+              "description": "OTP token to verify"
+            }
+          ],
+          "variable": [
+            {
+              "key": "userId",
+              "value": "12345",
+              "description": "User ID to verify OTP"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}

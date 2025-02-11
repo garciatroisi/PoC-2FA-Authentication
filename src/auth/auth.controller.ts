@@ -36,7 +36,7 @@ export class AuthController {
   })
   async generate(@Param('userId') userId: string, @Res() res: Response) {
     const otpauthUrl = this.authService.generateSecret(userId);
-    return await this.authService.respondWithQRCode(otpauthUrl, res);
+    return this.authService.respondWithQRCode(otpauthUrl, res);
   }
 
   @Post('verify/:userId')

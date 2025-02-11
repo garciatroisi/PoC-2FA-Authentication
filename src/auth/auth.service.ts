@@ -19,7 +19,7 @@ export class AuthService {
     return await qrcode.toDataURL(otpauthUrl);
   }
 
-  async respondWithQRCode(data: string, response: Response) {
+  respondWithQRCode(data: string, response: Response) {
     qrcode.toFileStream(response, data);
   }
   verifyToken(userId: string, token: string) {

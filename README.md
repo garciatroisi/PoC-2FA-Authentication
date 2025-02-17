@@ -17,12 +17,7 @@ This project implements a two-factor authentication (2FA) system using **TOTP (T
 
 ## Installation
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/username/2fa-project.git
-   cd 2fa-project
-   ```
+1. Clone the repository
 
 2. Install dependencies with **Yarn**:
    ```bash
